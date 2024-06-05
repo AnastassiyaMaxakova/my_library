@@ -25,14 +25,16 @@
             </div> 
         </div>
 
-        <dialog class="modal" id="modal">
-            <h2>Your new book</h2>
+        <dialog open class="modal" id="modal">
+            <p>Your new book</p>
             <div class="newBook">
-                <input type="text" placeholder="Title" id="title">
-                <input type="text" placeholder="Author" id="author">
-                <input type="number" placeholder="Number of pages" id="pages">
-                <label for="checkbox">Read:</label>
-                <input type="checkbox" id="checkbox">
+                <input type="text" placeholder="Title" id="title" required>
+                <input type="text" placeholder="Author" id="author" required>
+                <input type="number" placeholder="Number of pages" id="pages" min=0 required>
+                <div class="readBox">
+                    <label for="checkbox">Read:</label>
+                    <input type="checkbox" id="checkbox">
+                </div>
             </div>
             <div class="buttonContainer">
                 <button class="addBookBtn" id="addBookBtn">Add</button>

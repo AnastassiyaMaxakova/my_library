@@ -8,6 +8,7 @@ html,body{
     height: 100%;
     background-color: #042546;
     padding: 20px;
+    position: relative;
 }
 
 .header{
@@ -68,7 +69,6 @@ html,body{
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: bold;
-    
 }
 
 
@@ -79,4 +79,71 @@ html,body{
 .readBox input[type='checkbox']{
     accent-color: green;
     cursor: pointer;
+}
+
+.modal{
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 30%;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    background-color: #fbeceb;  
+}
+.modal::backdrop{
+    
+}
+.modal p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.newBook{
+    display: flex;
+    flex-direction: column;  
+}
+
+.newBook input[type="text"],
+.newBook input[type='number']{
+    line-height: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.newBook .readBox{
+    font-size:1.5rem;
+}
+
+.buttonContainer{
+    align-self: center;
+    margin-top: 5px;
+}
+
+.buttonContainer button{
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.addBookBtn{
+    background-color: #2b7b31;
+    color: white;
+}
+.addBookBtn:hover{
+    background-color: #2b7b32a0;
+}
+
+.closeBtn {
+    background-color: #f92020;
+    color: white;
+}
+.closeBtn:hover{
+    background-color: #f9202098;
 }
