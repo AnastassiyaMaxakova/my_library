@@ -8,21 +8,24 @@
 </head>
 <body>
     <header class="header">
-        <h1>My Library</h1>
-    </header>
-    <main>
+        <p class="headerName">My Library</p>
         <button class="addBtn" id="addBtn">Add a new book</button>
+    </header>
+    <main class="main">
         <div class="bookContainer">
+            <button class="removeBtn" id="removeBtn">x</button>
             <div class="bookInfo">
                 <p class="title">Title:</p>
                 <p class="author">Author:</p>
                 <p class="pages">Pages:</p>
-                <label for="checkbox">Read:</label>
-                <input type="checkbox" id="checkbox">
-            </div>
-            <button class="removeBtn" id="removeBtn">X</button>
+                <div class="readBox">
+                    <label for="checkbox">Read:</label>
+                    <input type="checkbox" id="checkbox">
+                </div>
+            </div> 
         </div>
-        <dialog open class="modal" id="modal">
+
+        <dialog class="modal" id="modal">
             <h2>Your new book</h2>
             <div class="newBook">
                 <input type="text" placeholder="Title" id="title">
