@@ -3,11 +3,13 @@ const modal = document.getElementById('modal');
 const closeBtn = document.getElementById('closeBtn');
 const addBookBtn = document.getElementById('addBookBtn');
 const myLibrary = [];
+const bookContainer = document.getElementsByClassName('bookContainer');
 
 addBtn.addEventListener('click', () => modal.showModal());
 closeBtn.addEventListener('click', ()=> modal.close());
 addBookBtn.addEventListener('click', addBookToLibrary);
-
+//addBookBtn.addEventListener('click', displayBook)
+//removeBtn.addEventListener('click',remove)
 
 
 function addBookToLibrary(){
@@ -15,11 +17,18 @@ function addBookToLibrary(){
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
     let readStatus = document.getElementById('checkbox').checked;
-    myLibrary.push(new Book(title,author,pages,readStatus));
-    console.log(myLibrary);
-    clearForm();
-    modal.close();
 
+    if (title!=='' && author!=='' && pages!=='') {
+        myLibrary.push(new Book(title,author,pages,readStatus));
+        console.log(myLibrary);
+        clearForm();
+        modal.close();
+        displayBook();
+    }
+    else {
+        alert('Fill the form')
+    }
+    
 }
 
 function Book(title,author,pages,readStatus){
@@ -38,36 +47,21 @@ function clearForm(){
 
 const main = document.querySelector('main');
 
-function displayBook(array){
-    //for (let i =0; i<myLibrary.length; i++){
+function displayBook(){
+            let i = myLibrary.length-1;
             let bookDiv = document.createElement('div');
             bookDiv.classList.add('bookContainer');
             main.appendChild(bookDiv);
 
-            /*let bookInfo =
+            let bookInfo =
             `<button class="removeBtn" id="removeBtn">x</button>
                 <div class="bookInfo">
                     <p class="title">Title:${myLibrary[i].title}</p>
                     <p class="author">Author:${myLibrary[i].author}</p>
                     <p class="pages">Pages:${myLibrary[i].pages}</p>
                     <p class="readStatus">Read:${myLibrary[i].readStatus=== false? 'No' : 'Yes'}</p>
-                </div> `;*/
-
-            let bookInfo =
-            `<button class="removeBtn" id="removeBtn">x</button>
-                <div class="bookInfo">
-                    <p class="title">Title:Hey</p>
-                    <p class="author">Author:Day</p>
-                    <p class="pages">Pages:Say</p>
-                    <p class="readStatus">Read:no</p>
-
                 </div> `;
             bookDiv.insertAdjacentHTML('beforeend',bookInfo)
-        //}
-}
+}     
 
-displayBook();
-displayBook();
-displayBook();
-displayBook();
-displayBook();
+
